@@ -2,7 +2,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://localhost:7005/api",
+  baseURL: "https://perfumeshop-api.azurewebsites.net",
   withCredentials: false,
 });
 
