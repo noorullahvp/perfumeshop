@@ -1,0 +1,6 @@
+@perfumeshopbackend_HostAddress = http://localhost:5143
+
+GET {{perfumeshopbackend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,27 @@
+﻿using perfumeshopbackend.Services.Implementation;
+using perfumeshopbackend.Services.Implementations;
+using perfumeshopbackend.Services.Interface;
+
+namespace perfumeshopbackend.Extensions
+{
+    public static class ServiceExtensions
+    {
+        public static IServiceCollection AddServices(this IServiceCollection services)
+        {
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IAuthService, AuthService>();
+            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<ICartService, CartService>();
+            services.AddScoped<IWishlistService, WishlistService>();
+            services.AddScoped<IOrderService, OrderService>();
+            services.AddScoped<IPaymentService, PaymentService>();
+
+
+            services.AddSingleton<CloudinaryService>();
+
+
+            return services;
+        }
+    }
+}
