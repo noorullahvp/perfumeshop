@@ -1,0 +1,341 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "N'5 chanel",
+      "description": "A refreshing  scent for the modern man, perfect for daily wear.",
+      "price": 5000,
+      "category": "Men",
+      "brand": "AquaFlow",
+      "images": [
+        "https://m.media-amazon.com/images/I/41tEJylR89L.jpg"
+      ],
+      "featured": true,
+      "bestseller": false,
+      "stock": 10,
+      "isActive": true
+    },
+    {
+      "id": "2",
+      "name": "COCO",
+      "description": "A coco item is more familiar for special users ",
+      "price": 2500,
+      "category": "Women",
+      "brand": "PetalLux",
+      "images": [
+        "https://momperfume.in/cdn/shop/files/chanel-coco-edp_71299f9a-6c5a-42da-9613-51cfbe315710.jpg?v=1720104909"
+      ],
+      "featured": true,
+      "bestseller": true,
+      "stock": 5,
+      "isActive": true
+    },
+    {
+      "id": "3",
+      "name": "Mystic Oud",
+      "description": "An energetic and refreshing fragrance with deep oud notes, suitable for any occasion.",
+      "price": 4300,
+      "category": "Unisex",
+      "brand": "Ancient Trails",
+      "images": [
+        "https://perfumeonline.ca/cdn/shop/products/Alexandre-J-The-Art-Deco-Collector-Oud_grande.png?v=1636482977"
+      ],
+      "featured": false,
+      "bestseller": true,
+      "stock": 8,
+      "isActive": true
+    },
+    {
+      "id": "4",
+      "name": "Citrus Burst",
+      "description": "A vibrant and invigorating citrus scent, perfect for a lively day out.",
+      "price": 3800,
+      "category": "Unisex",
+      "brand": "Zesty Aromas",
+      "images": [
+        "https://perfumeshark.com/cdn/shop/files/CitrusBurst-min.jpg?v=1706815450"
+      ],
+      "featured": false,
+      "bestseller": false,
+      "stock": 15,
+      "isActive": true
+    },
+    {
+      "id": "5",
+      "name": "Warm Vanilla",
+      "description": "A comforting and sweet vanilla fragrance, ideal for cozy evenings.",
+      "price": 5500,
+      "category": "Women",
+      "brand": "Sweet Serenity",
+      "images": [
+        "https://www.bathandbodyworks.in/on/demandware.static/-/Sites-bathandbody_master_catalog/default/dw1c25fd46/large/026533843.jpg"
+      ],
+      "featured": true,
+      "bestseller": false,
+      "stock": 7,
+      "isActive": true
+    },
+    {
+      "id": "6",
+      "name": "Forest Dew",
+      "description": "An earthy and fresh scent reminiscent of a dewy forest morning.",
+      "price": 1600,
+      "category": "Men",
+      "brand": "Green Essence",
+      "images": [
+        "https://tarakonline.com/upload/ProductColor/RealImage/2022/09/2948907964580062.jpg"
+      ],
+      "featured": false,
+      "bestseller": false,
+      "stock": 12,
+      "isActive": true
+    },
+    {
+      "id": "af21",
+      "name": "Fresh",
+      "description": "it is good and better",
+      "price": 3000,
+      "category": "Men",
+      "brand": "brutal",
+      "stock": 5,
+      "images": [
+        "https://bellavitaorganic.com/cdn/shop/files/Fresh_100_ml.jpg?v=1728034537&width=1000"
+      ],
+      "featured": false,
+      "bestseller": false,
+      "isActive": false
+    },
+    {
+      "id": "dba4",
+      "name": "Fogg",
+      "description": "It is very attractive for boys nowdays",
+      "price": 1400,
+      "category": "Men",
+      "brand": "SCENT",
+      "stock": 10,
+      "images": [
+        "https://cdn.shopify.com/s/files/1/0715/7180/0301/files/FOG.png?v=1737439949"
+      ],
+      "featured": false,
+      "bestseller": false,
+      "isActive": true
+    },
+    {
+      "id": "1972",
+      "name": "Impact",
+      "description": "it something rare item can feel it",
+      "price": 2000,
+      "category": "Men",
+      "brand": "Belwita",
+      "stock": 13,
+      "images": [
+        "https://assets.ajio.com/medias/sys_master/root/20240515/7u33/6644902e05ac7d77bb5c954b/-473Wx593H-4924946020-multi-MODEL.jpg"
+      ],
+      "featured": false,
+      "bestseller": false,
+      "isActive": true
+    },
+    {
+      "id": "a115",
+      "name": "FLEUE DE",
+      "description": "It is something like luxury item",
+      "price": 4000,
+      "category": "Men",
+      "brand": "EAU",
+      "stock": 12,
+      "images": [
+        "https://images-cdn.ubuy.co.in/6367c9bde1c2f86129596073-ether-perfumes-fleur-de-la-coeur-eau-de.jpg"
+      ],
+      "featured": false,
+      "bestseller": false,
+      "isActive": true
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "basheer",
+      "email": "basheer@gmail.com",
+      "password": "password123",
+      "role": "user",
+      "isActive": true
+    },
+    {
+      "id": "2",
+      "name": "admin",
+      "email": "admin@gmail.com",
+      "password": "adminpassword",
+      "role": "admin",
+      "isActive": true
+    },
+    {
+      "id": "3",
+      "name": "ameen",
+      "email": "ameen@gmail.com",
+      "password": "ameen123",
+      "role": "user",
+      "isActive": true
+    },
+    {
+      "id": "97a5",
+      "name": "muhammednoorullah",
+      "email": "muhammednoorullahvp@gmail.com",
+      "password": "noorullah123",
+      "role": "user",
+      "isActive": true
+    },
+    {
+      "id": "96e8",
+      "name": "safa",
+      "email": "safathasni@gmail.com",
+      "password": "safa123",
+      "role": "user",
+      "isActive": true
+    }
+  ],
+  "carts": [
+    {
+      "id": "6a51",
+      "userId": "1",
+      "productId": "2",
+      "quantity": 1
+    },
+    {
+      "id": "839d",
+      "userId": "97a5",
+      "productId": "2",
+      "quantity": 1
+    }
+  ],
+  "orders": [
+    {
+      "id": "2616",
+      "userId": "97a5",
+      "date": "2025-06-17T12:19:45.749Z",
+      "totalAmount": 149.97,
+      "deliveryAddress": {
+        "fullName": "abdul salehhafiz",
+        "addressLine1": "45",
+        "addressLine2": "45",
+        "city": "erer",
+        "state": "erer",
+        "zipCode": "3434",
+        "phoneNumber": "434343434"
+      },
+      "items": [
+        {
+          "productId": "1",
+          "name": "N'5 chanel",
+          "price": 49.99,
+          "quantity": 3,
+          "image": "https://images.unsplash.com/photo-1541643600914-78b084683601?w=400"
+        }
+      ]
+    },
+    {
+      "id": "392b",
+      "userId": "97a5",
+      "date": "2025-10-21T11:48:39.531Z",
+      "totalAmount": 6800,
+      "deliveryAddress": {
+        "fullName": "asd`",
+        "addressLine1": "gjh",
+        "addressLine2": "",
+        "city": "cxvcx",
+        "state": "xzxz",
+        "zipCode": "54454",
+        "phoneNumber": "565634313",
+        "alternative address": "c"
+      },
+      "items": [
+        {
+          "productId": "2",
+          "name": "COCO",
+          "price": 2500,
+          "quantity": 1,
+          "image": "https://momperfume.in/cdn/shop/files/chanel-coco-edp_71299f9a-6c5a-42da-9613-51cfbe315710.jpg?v=1720104909"
+        },
+        {
+          "productId": "3",
+          "name": "Mystic Oud",
+          "price": 4300,
+          "quantity": 1,
+          "image": "https://perfumeonline.ca/cdn/shop/products/Alexandre-J-The-Art-Deco-Collector-Oud_grande.png?v=1636482977"
+        }
+      ]
+    },
+    {
+      "id": "0a4e",
+      "userId": "97a5",
+      "date": "2025-10-22T02:08:47.590Z",
+      "totalAmount": 2500,
+      "deliveryAddress": {
+        "fullName": "abdul salehhafiz",
+        "addressLine1": "gjh",
+        "addressLine2": "",
+        "city": "fg",
+        "state": "hf",
+        "zipCode": "354677",
+        "phoneNumber": "9567111425",
+        "alternative address": "j"
+      },
+      "items": [
+        {
+          "productId": "2",
+          "name": "COCO",
+          "price": 2500,
+          "quantity": 1,
+          "image": "https://momperfume.in/cdn/shop/files/chanel-coco-edp_71299f9a-6c5a-42da-9613-51cfbe315710.jpg?v=1720104909"
+        }
+      ]
+    },
+    {
+      "id": "33bb",
+      "userId": "97a5",
+      "date": "2025-10-22T02:36:43.612Z",
+      "totalAmount": 2500,
+      "deliveryAddress": {
+        "fullName": "muhammed noorullah",
+        "addressLine1": "htht",
+        "addressLine2": "",
+        "city": "tyty",
+        "state": "kerela",
+        "zipCode": "455234",
+        "phoneNumber": "9567111425"
+      },
+      "items": [
+        {
+          "productId": "2",
+          "name": "COCO",
+          "price": 2500,
+          "quantity": 1,
+          "image": "https://momperfume.in/cdn/shop/files/chanel-coco-edp_71299f9a-6c5a-42da-9613-51cfbe315710.jpg?v=1720104909"
+        }
+      ]
+    },
+    {
+      "id": "eb34",
+      "userId": "96e8",
+      "date": "2025-10-22T02:49:21.930Z",
+      "totalAmount": 2500,
+      "deliveryAddress": {
+        "fullName": "safa",
+        "addressLine1": "alikaparamb",
+        "addressLine2": "",
+        "city": "pattamvi",
+        "state": "kerela",
+        "zipCode": "679303",
+        "phoneNumber": "956743834"
+      },
+      "items": [
+        {
+          "productId": "2",
+          "name": "COCO",
+          "price": 2500,
+          "quantity": 1,
+          "image": "https://momperfume.in/cdn/shop/files/chanel-coco-edp_71299f9a-6c5a-42da-9613-51cfbe315710.jpg?v=1720104909"
+        }
+      ]
+    }
+  ]
+}
