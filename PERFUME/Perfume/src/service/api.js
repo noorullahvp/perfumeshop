@@ -2,7 +2,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://perfumeshop-api.azurewebsites.net",
+  baseURL: "https://perfumeshop-api-noorullah-cydkgsazbdeuf5f2.southindia-01.azurewebsites.net/api",
   withCredentials: false,
 });
 
