@@ -37,6 +37,14 @@ const ContextPro = ({ children }) => {
         console.error("User parse error:", err);
       }
     }
+
+    // Check for logout message flag after redirect
+    if (sessionStorage.getItem("showLogoutMessage")) {
+      setTimeout(() => {
+        triggerNotification("Logged out successfully!", "success");
+      }, 300);
+      sessionStorage.removeItem("showLogoutMessage");
+    }
   }, []);
 
   const handleLogout = () => {
@@ -49,7 +57,7 @@ const ContextPro = ({ children }) => {
     setWishlist([]);
     setCart([]);
 
-    triggerNotification("Logged out successfully!", "success");
+    sessionStorage.setItem("showLogoutMessage", "true");
     window.location.href = "/login";
   };
 
