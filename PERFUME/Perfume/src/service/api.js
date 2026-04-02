@@ -1,11 +1,9 @@
-
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://perfumeshop-api-noorullah-cydkgsazbdeuf5f2.southindia-01.azurewebsites.net/api",
-  withCredentials: false,
+  // വെർസലിലെ എൻവയോൺമെന്റ് വേരിയബിൾ എടുക്കും, ഇല്ലെങ്കിൽ ലോക്കൽഹോസ്റ്റ് എടുക്കും
+  baseURL: import.meta.env.VITE_API_URL || "http://localhost:5000/api/",
 });
-
 
 api.interceptors.request.use(
   (config) => {
