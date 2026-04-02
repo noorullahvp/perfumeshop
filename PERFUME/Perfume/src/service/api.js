@@ -1,8 +1,7 @@
 import axios from "axios";
-
 const api = axios.create({
-  // വെർസലിലെ എൻവയോൺമെന്റ് വേരിയബിൾ എടുക്കും, ഇല്ലെങ്കിൽ ലോക്കൽഹോസ്റ്റ് എടുക്കും
-  baseURL: import.meta.env.VITE_API_URL || "http://localhost:5000/api/",
+  // ലോക്കൽ ലിങ്ക് മാറ്റി എൻവയോൺമെന്റ് വേരിയബിൾ ഉപയോഗിക്കുക
+  baseURL: import.meta.env.VITE_API_URL || "https://perfumeshop-api-noorullah-cydkgsazbdeuf5f2.southindia-01.azurewebsites.net/api/",
 });
 
 api.interceptors.request.use(
