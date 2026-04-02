@@ -208,18 +208,20 @@ const Home = () => {
       }
     }
 
-    const load = async () => {
-      try {
-        const res = await axios.get("https://localhost:7005/api/Product");
-        setProducts(res.data?.data || []);
-      } catch (err) {
-        console.error("❌ Product load error:", err);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-    load();
-  }, [navigate]);
+   const load = async () => {
+  try {
+    // നേരിട്ട് ലിങ്ക് നൽകി പരീക്ഷിക്കുക
+    const azureURL = "https://perfumeshop-api-noorullah-cydkgsazbdeuf5f2.southindia-01.azurewebsites.net/api";
+    const res = await axios.get(`${azureURL}/Product`);
+    
+    console.log("Data from Azure:", res.data); // ഡാറ്റ വരുന്നുണ്ടോ എന്ന് നോക്കാൻ
+    setProducts(res.data?.data || res.data || []);
+  } catch (err) {
+    console.error("❌ Product load error:", err);
+  } finally {
+    setIsLoading(false);
+  }
+};
 
   const toAddToCart = async (product) => {
     if (!isLoggedIn) {
