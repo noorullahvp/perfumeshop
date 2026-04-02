@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState, useRef } from "react";
 import { AppContext } from "../Context/ContextPro";
+import { CartContext } from "../Context/cartContext";
 import { useNavigate } from "react-router-dom";
+import LuxuryProductCard from "../Common/LuxuryProductCard";
 
 // --- Animation Hooks & Components ---
 const useScrollReveal = (threshold = 0.1) => {
@@ -46,7 +48,8 @@ const Reveal = ({ children, direction = "up", delay = 0, className = "" }) => {
 };
 
 const Wishlist = () => {
-  const { wishlist, fetchWishlist, removeFromWishlist, isLoggedIn } = useContext(AppContext);
+  const { wishlist, fetchWishlist, removeFromWishlist, isLoggedIn, triggerNotification } = useContext(AppContext);
+  const { addToCart } = useContext(CartContext);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -54,7 +57,22 @@ const Wishlist = () => {
     if (isLoggedIn) {
       fetchWishlist().catch(() => {});
     }
-  }, [isLoggedIn]);
+  }, [isLoggedIn, fetchWishlist]);
+
+  const onAddToCart = async (product) => {
+    if (!isLoggedIn) {
+      triggerNotification && triggerNotification("Please login first to add items to cart.", "error");
+      navigate("/login");
+      return;
+    }
+    await addToCart(product.id, 1);
+    triggerNotification && triggerNotification(`Added ${product.name} to cart 🛒`, "success");
+  };
+
+  const onRemoveFromWishlist = async (product) => {
+    if (!product || !product.id) return;
+    await removeFromWishlist(product.id);
+  };
 
   if (!isLoggedIn) {
     return (
@@ -120,61 +138,29 @@ const Wishlist = () => {
             </button>
           </Reveal>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 lg:gap-12 pl-0">
-            {wishlist.map((item, idx) => (
-              <Reveal key={item.id} direction="up" delay={(idx % 4) * 100}>
-                <div className="group relative flex flex-col items-center text-center bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 border border-stone-100 hover:-translate-y-2">
-                  
-                  {/* Remove Button (Corner) */}
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      removeFromWishlist(item.productId);
-                    }}
-                    className="absolute top-4 right-4 text-stone-300 hover:text-rose-500 transition-colors z-10 w-8 h-8 flex items-center justify-center rounded-full hover:bg-rose-50"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                  </button>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 md:gap-10">
+            {wishlist.map((item, idx) => {
+              // The API usually wraps the product inside item.product or item.products depending on backend.
+              const productObj = item.product || item.products;
+              if (!productObj) return null;
+              
+              const p = {
+                ...productObj,
+                id: productObj.id || item.productId // Ensure ID maps for onRemove and onAdd
+              };
 
-                  {/* Product Image */}
-                  <div 
-                    className="w-full h-64 mb-6 relative overflow-hidden rounded-xl bg-stone-50 cursor-pointer flex items-center justify-center"
-                    onClick={() => navigate(`/product/${item.productId}`)}
-                  >
-                    <img
-                      src={
-                        item.product?.imageUrls && item.product.imageUrls.length > 0
-                          ? item.product.imageUrls[0]
-                          : "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                      }
-                      alt={item.product?.name || item.products?.name || "Product"}
-                      className="max-h-full max-w-full object-contain p-4 transition-transform duration-700 group-hover:scale-110"
-                    />
-                  </div>
-
-                  {/* Product Details */}
-                  <span className="text-[10px] text-amber-600 uppercase tracking-[0.2em] font-bold mb-2">Eau De Parfum</span>
-                  <h3 
-                    className="text-xl font-serif text-stone-900 mb-2 cursor-pointer hover:text-amber-600 transition-colors line-clamp-1"
-                    onClick={() => navigate(`/product/${item.productId}`)}
-                  >
-                    {item.product?.name || item.products?.name}
-                  </h3>
-                  <p className="text-lg font-light text-stone-500 mb-6">₹{(item.product?.price || 0).toLocaleString()}</p>  
-
-                  {/* Action Button */}
-                  <button
-                    onClick={() => navigate(`/product/${item.productId}`)}
-                    className="w-full bg-transparent border border-stone-900 text-stone-900 px-6 py-3 uppercase tracking-[0.2em] text-[10px] font-bold hover:bg-stone-900 hover:text-white transition-all duration-300"
-                  >
-                    View Details
-                  </button>
-
-                </div>
-              </Reveal>
-            ))}
+              return (
+                <Reveal key={item.id || idx} direction="up" delay={(idx % 4) * 100}>
+                  <LuxuryProductCard 
+                    product={p} 
+                    navigate={navigate}
+                    onAddToCart={onAddToCart}
+                    onRemoveFromWishlist={onRemoveFromWishlist}
+                    isWishlistItem={true}
+                  />
+                </Reveal>
+              );
+            })}
           </div>
         )}
       </div>
