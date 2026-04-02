@@ -1,7 +1,10 @@
 import axios from "axios";
+
+// ഈ വരി കൂടി ചേർക്കുക (Product service-ന് വേണ്ടി)
+export const URL = import.meta.env.VITE_API_URL || "https://perfumeshop-api-noorullah-cydkgsazbdeuf5f2.southindia-01.azurewebsites.net/api";
+
 const api = axios.create({
-  // ലോക്കൽ ലിങ്ക് മാറ്റി എൻവയോൺമെന്റ് വേരിയബിൾ ഉപയോഗിക്കുക
-  baseURL: import.meta.env.VITE_API_URL || "https://perfumeshop-api-noorullah-cydkgsazbdeuf5f2.southindia-01.azurewebsites.net/api/",
+  baseURL: URL,
 });
 
 api.interceptors.request.use(
